@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luisa Falcão</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f354489fec.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div id="title">
+            <h2>Luisa Falcão</h2>
+            <h3>Front End Developer</h3>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false"><span class="sr-only">Menu</span></button>
+
+        <nav>
+            <ul id="primary-nav" data-visible="false">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="column">
+            <h2>About me</h2>
+        </div>
+        <div class="column">
+            <p>Hi! I'm Luisa, a graphic designer turned front-end developer based in Rio de Janeiro, Brazil.</p>
+            <p>Welcome to my little space in the world wide web. You can see some of the projects I've worked on by clicking <a href="#projects">here</a> and you can contact me <a href="#contact">here</a>.</p>
+            <hr>
+            <p class="italic">Oi! Eu sou a Luisa, designer gráfica e front-end developer atualmente morando no Rio de Janeiro.</p>
+            <p class="italic">Bem vindo/a ao meu espaço! Você pode dar uma olhada em alguns dos meus projetos <a href="#projects">aqui</a> e entrar em contato comigo <a href="#contact">aqui</a>.</p>
+            <hr>
+            <h3>Skills:</h3>
+            <div id="skills">
+                <ul>
+                    <li class="skill-type"><i class="fa-solid fa-bezier-curve icon"></i> Design Softwares:</li>
+                    <li class="hundred">Adobe Illustrator</li>
+                    <li class="ninety">Adobe Photoshop</li>
+                    <li class="ninety">Adobe InDesign</li>
+                    <li class="eighty">Adobe After Effects</li>
+                    <li class="eighty">Adobe Premiere Pro</li>
+                </ul>
+
+                <ul>
+                    <li class="skill-type"><i class="fa-solid fa-code icon"></i> Programming Languages:</li>
+                    <li class="hundred">HTML5</li>
+                    <li class="ninety">CSS</li>
+                    <li class="seventy">JavaScript</li>
+                </ul>
+
+                <ul>
+                    <li class="skill-type"><i class="fa-solid fa-earth-americas icon"></i> Languages:</li>
+                    <li class="hundred">English</li>
+                    <li class="hundred">Portuguese</li>
+                    <li class="twenty">French</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="column">
+            <h2>Projects</h2>
+        </div>
+        <div class="column" id="wrapper">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="column">
+            <h2>Contact</h2>
+        </div>
+        <div class="column">
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+                <label for="email">Email</label>
+                <input type="text" id="email">
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>
