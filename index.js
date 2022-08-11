@@ -13,3 +13,19 @@ navToggle.addEventListener('click', () => {
         navToggle.setAttribute('aria-expanded', false)
     }
 })
+
+const projects = document.querySelectorAll('.item')
+const panels = document.querySelectorAll('.panel')
+const closeBtns = document.querySelectorAll('.close')
+
+projects.forEach(project => project.addEventListener('click', event => {
+    panels.forEach(panel => {
+        if (panel.dataset.project === event.currentTarget.dataset.project) {
+            panel.classList.add('show')
+        }
+    })
+}))
+
+closeBtns.forEach(closeBtn => closeBtn.addEventListener('click', event => {
+    event.currentTarget.closest('.panel').classList.remove('show')
+}))

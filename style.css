@@ -36,6 +36,7 @@ html {
 
     /* Fonts */
     --primary-ff: 'Montserrat', sans-serif;
+    --secondary-ff: 'Source Code Pro', monospace;
 
     /* Height */
     --height: calc(100vh - 60px);
@@ -43,7 +44,7 @@ html {
 
 body {
     background-color: var(--light);
-    font-family: 'Montserrat';
+    font-family: var(--primary-ff);
     overflow-x: hidden;
 }
 
@@ -55,22 +56,23 @@ header {
     /* height: 100vh; */
     position:fixed;
     width: 100%;
+    height: 10vh;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--medium);
     bottom: 0;
+    z-index: 999;
 }
 
 header h3 {
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--secondary-ff);
     text-transform: lowercase;
     font-weight: 400;
 }
 
 #primary-nav {
-    font-family: 'Source Code Pro', monospace;
     list-style: none;
     display: flex;
 }
@@ -80,12 +82,13 @@ header h3 {
 }
 
 #primary-nav a {
+    font-family: var(--secondary-ff);
     text-decoration: none;
     color: var(--dark);
 }
 
 #primary-nav a:hover {
-    font-family: 'Source Code Pro', monospace;
+    text-decoration: line-through;
 }
 
 .mobile-nav-toggle {
@@ -138,10 +141,6 @@ header h3 {
 
 hr {
     margin: 2rem 0
-}
-
-.italic {
-    font-style: italic;
 }
 
 #skills ul {
@@ -205,23 +204,146 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     padding: 2rem;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
+/* Work */
 #wrapper {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    margin-top: 1rem;
 }
 
-#wrapper div {
+#wrapper .item {
     height: 200px;
     background-color: var(--dark);
     color: var(--light);
 }
 
+.item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid var(--dark); */
+
+    cursor: pointer;
+}
+
+.item p {
+    position: absolute;
+    opacity: 0;
+
+    transition: opacity 300ms ease-in-out;
+}
+
+.item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    transition: opacity 300ms ease-in-out;
+}
+
+.item:hover img {
+    opacity: 0.2;
+}
+
+.item:hover p {
+    opacity: 1;
+}
+
+.panel {
+    height: 90vh;
+    width: 100%;
+    position: fixed;
+    background: hsl(0 0% 100% / 0.4);
+    backdrop-filter: blur(3rem);
+    left: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 300ms ease-in;
+}
+
+.panel.show {
+    transform: translateX(0%);
+}
+
+.close {
+    all: unset;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.panel hr {
+    width: 10%;
+}
+
+.slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+.slides {
+    display: flex;
+    
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+}
+
+.slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    margin-right: 50px;
+    border-radius: 10px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 @media only screen and (min-width: 700px) {
+    #about .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     header {
         display: flex;
         flex-direction: row;
@@ -235,5 +357,35 @@ section {
 
     #wrapper {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Contact */
+input, textarea {
+    font-family: var(--secondary-ff);
+    line-height: 1.5rem;
+    font-size: 1rem;
+    padding: .5rem;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    width: 100%;
+    background-color: var(--medium);
+    border: 1px solid var(--dark);
+}
+
+#submit-btn {
+    cursor: pointer;
+    font-family: var(--primary-ff);
+}
+
+#submit-btn:hover {
+    background-color: var(--light);
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 700px) {
+    form {
+        width: 50%;
     }
 }
