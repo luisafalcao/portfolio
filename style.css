@@ -267,6 +267,18 @@ section {
     transition: transform 300ms ease-in;
 }
 
+.panel .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.panel .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .panel.show {
     transform: translateX(0%);
 }
@@ -275,6 +287,17 @@ section {
     all: unset;
     margin-bottom: 1rem;
     cursor: pointer;
+}
+
+#control {
+    width: 100%;
+    bottom: 1rem;
+    position: absolute;
+    display: flex;
+}
+
+#control i {
+    margin-right: 1rem;
 }
 
 .panel hr {
