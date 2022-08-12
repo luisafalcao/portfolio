@@ -101,6 +101,7 @@ header h3 {
         inset: 0 0 0 30%;
         background: hsl(0 0% 100% / 0.1);
         backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
         flex-direction: column;
         padding: min(20vh, 10rem) 2rem;
         z-index: 1000;
@@ -123,13 +124,20 @@ header h3 {
         width: 2rem;
         aspect-ratio: 1;
         right: 2rem;
-        bottom: 2rem;
         z-index: 9999;
         cursor: pointer;
     }
 
     .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url('img/icon-close.svg');
+    }
+
+    h2 {
+        font-size: 1.15rem;
+    }
+
+    h3 {
+        font-size: 1rem;
     }
 }
 
