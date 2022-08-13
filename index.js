@@ -24,6 +24,7 @@ window.addEventListener('click', event => {
 const projects = document.querySelectorAll('.item')
 const panels = document.querySelectorAll('.panel')
 const closeBtns = document.querySelectorAll('.close')
+const header = document.querySelector('header')
 
 projects.forEach(project => project.addEventListener('click', event => {
     panels.forEach(panel => {
@@ -36,3 +37,12 @@ projects.forEach(project => project.addEventListener('click', event => {
 closeBtns.forEach(closeBtn => closeBtn.addEventListener('click', event => {
     event.currentTarget.closest('.panel').classList.remove('show')
 }))
+
+header.addEventListener('click', event => {
+    console.log('clicked')
+    panels.forEach(panel => {
+        if (panel.classList.contains('show')) {
+            panel.classList.remove('show')
+        }
+    })
+})
